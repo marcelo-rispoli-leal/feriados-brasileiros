@@ -1,0 +1,139 @@
+{
+	"estados": [
+		{
+			"cuf": "11",
+			"uf": "RO",
+			"nome": "Rondônia"
+		},
+		{
+			"cuf": "12",
+			"uf": "AC",
+			"nome": "Acre"
+		},
+		{
+			"cuf": "13",
+			"uf": "AM",
+			"nome": "Amazonas"
+		},
+		{
+			"cuf": "14",
+			"uf": "RR",
+			"nome": "Roraima"
+		},
+		{
+			"cuf": "15",
+			"uf": "PA",
+			"nome": "Pará"
+		},
+		{
+			"cuf": "16",
+			"uf": "AP",
+			"nome": "Amapá"
+		},
+		{
+			"cuf": "17",
+			"uf": "TO",
+			"nome": "Tocantins"
+		},
+		{
+			"cuf": "21",
+			"uf": "MA",
+			"nome": "Maranhão"
+		},
+		{
+			"cuf": "22",
+			"uf": "PI",
+			"nome": "Piauí"
+		},
+		{
+			"cuf": "23",
+			"uf": "CE",
+			"nome": "Ceará"
+		},
+		{
+			"cuf": "24",
+			"uf": "RN",
+			"nome": "Rio Grande do Norte"
+		},
+		{
+			"cuf": "25",
+			"uf": "PB",
+			"nome": "Paraíba"
+		},
+		{
+			"cuf": "26",
+			"uf": "PE",
+			"nome": "Pernambuco"
+		},
+		{
+			"cuf": "27",
+			"uf": "AL",
+			"nome": "Alagoas"
+		},
+		{
+			"cuf": "28",
+			"uf": "SE",
+			"nome": "Sergipe"
+		},
+		{
+			"cuf": "29",
+			"uf": "BA",
+			"nome": "Bahia"
+		},
+		{
+			"cuf": "31",
+			"uf": "MG",
+			"nome": "Minas Gerais"
+		},
+		{
+			"cuf": "32",
+			"uf": "ES",
+			"nome": "Espiríto Santo"
+		},
+		{
+			"cuf": "33",
+			"uf": "RJ",
+			"nome": "Rio de Janeiro"
+		},
+		{
+			"cuf": "35",
+			"uf": "SP",
+			"nome": "São Paulo"
+		},
+		{
+			"cuf": "41",
+			"uf": "PR",
+			"nome": "Paraná"
+		},
+		{
+			"cuf": "42",
+			"uf": "SC",
+			"nome": "Santa Catarina"
+		},
+		{
+			"cuf": "43",
+			"uf": "RS",
+			"nome": "Rio Grande do Sul"
+		},
+		{
+			"cuf": "50",
+			"uf": "MS",
+			"nome": "Mato Grosso do Sul"
+		},
+		{
+			"cuf": "51",
+			"uf": "MT",
+			"nome": "Mato Grosso"
+		},
+		{
+			"cuf": "52",
+			"uf": "GO",
+			"nome": "Goiás"
+		},
+		{
+			"cuf": "53",
+			"uf": "DF",
+			"nome": "Distrito Federal"
+		}
+	]
+}

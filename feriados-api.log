@@ -1,0 +1,14 @@
+2020-08-06T17:53:09.054Z [feriados-api] info: API Started!
+2020-08-06T17:53:42.668Z [feriados-api] info: GET /feriados - 404({"4317756","2001-12-20","Não há feriado cadastrado na data 2001-12-20 para o código do IBGE 4317756"})
+2020-08-06T18:49:40.342Z [feriados-api] info: API Started!
+2020-08-06T18:52:38.644Z [feriados-api] info: API Started!
+2020-08-06T18:53:36.883Z [feriados-api] info: API Started!
+2020-08-06T18:54:25.183Z [feriados-api] info: API Started!
+2020-08-06T18:55:33.820Z [feriados-api] info: API Started!
+2020-08-06T18:56:16.785Z [feriados-api] info: API Started!
+2020-08-06T18:57:06.215Z [feriados-api] info: API Started!
+2020-08-07T01:37:02.887Z [feriados-api] info: API Started!
+2020-08-07T01:47:20.411Z [feriados-api] info: API Started!
+2020-08-07T01:51:04.177Z [feriados-api] info: GET /feriados - 404({"43","2001-04-14","Não há feriado cadastrado na data 2001-04-14 para o código do IBGE 43"})
+2020-08-07T02:12:49.320Z [feriados-api] info: API Started!
+2020-08-07T02:13:06.819Z [feriados-api] info: GET /feriados - 200({"43","2001-04-13","Feriado Nacional de Sexta-Feira Santa"})
