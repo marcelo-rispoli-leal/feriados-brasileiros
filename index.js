@@ -1,19 +1,21 @@
 import express from 'express';
 import winston from 'winston';
 import cors from 'cors';
-import holidaysRouter from './feriados/feriados.js';
+import holidaysRouter from './routes/feriados.js';
+import statesRouter from './routes/estados.js';
 import { promises as fs } from 'fs';
+import swaggerUi from 'swagger-ui-express';
+import { swaggerDoc } from './docs/doc.js';
 
 const { readFile, writeFile } = fs;
 
-global.estados = 'estados.json';
-global.cidades = 'cidades.json';
-
-global.nacional = 'nacional.json';
-global.estadual = 'estadual.json';
-global.municipal = 'municipal.json';
-global.carnaval = 'carnaval.json';
-global.cchristi = 'corpus-christi.json';
+global.estados = './json/estados.json';
+global.cidades = './json/cidades.json';
+global.nacional = './json/nacional.json';
+global.estadual = './json/estadual.json';
+global.municipal = './json/municipal.json';
+global.carnaval = './json/carnaval.json';
+global.cchristi = './json/corpus-christi.json';
 
 const { combine, timestamp, label, printf } = winston.format;
 const myFormat = printf(({ level, message, label, timestamp }) => {
@@ -24,17 +26,21 @@ global.logger = winston.createLogger({
   level: 'silly',
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: 'feriados-api.log' }),
+    new winston.transports.File({ filename: './logs/feriados-api.log' }),
   ],
   format: combine(label({ label: 'feriados-api' }), timestamp(), myFormat),
 });
 
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST.trim();
+
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(express.static('public'));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use('/feriados', holidaysRouter);
-
-const PORT = process.env.PORT || 3000;
+app.use('/estados', statesRouter);
 
 app.get('/', (_, res) => {
   res.end();
@@ -48,7 +54,7 @@ app.listen(PORT, async () => {
     await readFile(municipal);
     await readFile(carnaval);
     await readFile(cchristi);
-    logger.info('API Started!');
+    logger.info("API Started! '" + HOST + "'");
   } catch (err) {
     // cria arquivo temporário de feriados nacionais
     let tmpJson = {
@@ -65,7 +71,7 @@ app.listen(PORT, async () => {
     };
 
     //escreve arquivo de feriados nacionais
-    writeFile(nacional, JSON.stringify(tmpJson, null, 2))
+    writeFile(nacional, JSON.stringify(tmpJson))
       .then(() => {
         logger.info('National Holidays Created!');
       })
@@ -80,7 +86,7 @@ app.listen(PORT, async () => {
     };
 
     // escreve arquivo de feriados estaduais
-    writeFile(estadual, JSON.stringify(tmpJson, null, 2))
+    writeFile(estadual, JSON.stringify(tmpJson))
       .then(() => {
         logger.info('State Holidays File Created!');
       })
@@ -89,7 +95,7 @@ app.listen(PORT, async () => {
       });
 
     // escreve arquivo de feriados municipais
-    writeFile(municipal, JSON.stringify(tmpJson, null, 2))
+    writeFile(municipal, JSON.stringify(tmpJson))
       .then(() => {
         logger.info('Municipal Holidays File Created!');
       })
@@ -98,7 +104,7 @@ app.listen(PORT, async () => {
       });
 
     // escreve arquivo de carnaval
-    writeFile(carnaval, JSON.stringify(tmpJson, null, 2))
+    writeFile(carnaval, JSON.stringify(tmpJson))
       .then(() => {
         logger.info('Carnival Holidays File Created!');
       })
@@ -107,7 +113,7 @@ app.listen(PORT, async () => {
       });
 
     // escreve arquivo de corpus christi
-    writeFile(cchristi, JSON.stringify(tmpJson, null, 2))
+    writeFile(cchristi, JSON.stringify(tmpJson))
       .then(() => {
         logger.info('Corpus Christi Holidays File Created!');
       })
