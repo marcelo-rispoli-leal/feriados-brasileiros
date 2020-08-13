@@ -62,7 +62,7 @@ A API já está populada com os feriados nacionais. Todos os feriados estaduais 
 
 O endpoint "feriados" responde aos seguintes verbos: GET, PUT e DELETE.
 
-# GET - Consulta
+## GET - Consulta
 
 O endpoint para consultar feriados tem o seguinte formato:
 
@@ -92,7 +92,7 @@ GET /feriados/33/2020-11-20/
 
 Se não houver um feriado no dia para o estado ou município consultado a API retorna status 404.
 
-# PUT - Cadastro
+## PUT - Cadastro
 
 O cadastro de um feriado estadual ou municipal segue estrutura semelhante
 à consulta, mas não contém o ano, apenas o mês e dia do feriado.
@@ -109,7 +109,7 @@ PUT /feriados/3550308/01-25/
 
 A API retorna o status 201 se esse feriado ainda não estava cadastrado na base. Se já existe um feriado cadastrado neste dia para o estado ou município especificado, o nome do feriado é atualizado e é retornado status 200 para indicar que a requisição foi bem sucedida.
 
-# DELETE - Exclusão
+## DELETE - Exclusão
 
 A API também tem a opção de apagar um feriado.
 
@@ -124,7 +124,7 @@ O endpoint retorna status 404 se esse feriado não existir ou 204 se a requisiç
 
 Uma tentativa de remover um feriado estadual num município retornar o status 403. Uma tentativa de remover um feriado nacional em um município ou em uma unidade federativa também retorna 403.
 
-# Feriados estaduais ou municipais móveis
+## Feriados estaduais ou municipais móveis
 
 O cadastro e remoção de feriados móveis tem uma assinatura diferente. No
 lugar do dia, é passado o nome do feriado após o código do ibge.
@@ -183,4 +183,4 @@ Em qualquer requisição, é retornado o status 400 em caso de não validação 
 
 Adicionalmente, na página inicial da API foi disponibilizado link de acesso a pasta '/docs' que contém sua documentação, onde há mais instruções para sua utilização e é possível consultar unidades federativas, municípios e feriados além de realizar o cadastro e exclusão de feriados estaduais ou municipais.
 
-Faça bom proveito da API, em breve será disponibilizada nova versão. Favor entre em contato caso identifique problemas.
+Faça bom proveito da API, ela está publicada para uso no Heroku em 'https://feriados-brasileiros.herokuapp.com/' e em breve será disponibilizada nova versão. Favor entre em contato caso identifique problemas.
