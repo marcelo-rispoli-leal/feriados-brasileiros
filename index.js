@@ -32,7 +32,7 @@ global.logger = winston.createLogger({
 });
 
 const PORT = process.env.PORT || 3000;
-const HOST = process.env.HOST.trim() || 'feriados-brasileiros.herokuapp.com';
+global.HOST = process.env.HOST.trim() || 'feriados-brasileiros.herokuapp.com';
 
 const app = express();
 app.use(express.json());
