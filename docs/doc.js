@@ -9,7 +9,7 @@ export const swaggerDoc = {
       email: 'marcelorispoli@gmail.com',
     },
   },
-  host: process.env.HOST.trim(),
+  host: HOST,
   tags: [
     {
       name: 'estados',
