@@ -1,1 +1,1 @@
-web: SET HOST=feriados-brasileiros.herokuapp.com && node index.js
+web: node index.js
