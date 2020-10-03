@@ -4,7 +4,7 @@ export const swaggerDoc = {
     description:
       'This is a Brazilian Holidays API. See more information to use this in next sections',
     version: '1.0.0',
-    title: 'Brasilian Holidays API',
+    title: 'Brazilian Holidays API',
     contact: {
       email: 'marcelorispoli@gmail.com',
     },
